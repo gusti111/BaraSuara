@@ -38,6 +38,24 @@ BaraSuara is a server-rendered PHP website that combines music and editorial con
 
 The actual behavior of order and scan workflows depends on the configured database schema and the current data in the local environment.
 
+## Public, member, and administration flow
+
+```mermaid
+flowchart TD
+    A["Visitor opens public website"] --> B["Browse news, music, and tour content"]
+    B --> C{"Next action"}
+    C -->|Read content| D["Open editorial or music page"]
+    C -->|Member access| E["Register or sign in"]
+    E --> F["Browse available event information"]
+    F --> G["Submit ticket order"]
+    G --> H["Review order status"]
+    A --> I["Administrator sign-in"]
+    I --> J["Manage content, users, tours, and orders"]
+    J --> K["Gate scanner workflow"]
+```
+
+Ticket availability, payment integration, and real-world event authorization must be verified separately before treating the project as a live ticketing service.
+
 ## Technology
 
 | Layer | Implementation |
